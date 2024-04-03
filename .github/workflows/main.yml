@@ -1,5 +1,4 @@
 name: CI/CD with Terraform
-on:
     push:
         branches:
             -Complete-CI/CD-with-Terraform-AWS
@@ -11,7 +10,8 @@ env:
     PRIVATE_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PRIVATE }}
     PUBLIC_SSH_KEY: ${{ secrets.AWS_SSH_KEY_PUBLIC }}
     AWS_REGION: ap-south-1
-
+on: 
+    workflow_dispatch
 jobs:
     deploy-infra:
         runs-on: ubuntu-latest
